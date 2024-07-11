@@ -1,0 +1,61 @@
+.contacto {
+    background-color: beige;
+}
+
+nav {
+    background-color: antiquewhite;
+    border-radius: 20px;
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 10px 20px;
+}
+
+nav button{
+    background-color: transparent; 
+    border: none; 
+    cursor: pointer; 
+    margin-left: 20px;
+}
+
+nav img {
+    border-radius: 20px; 
+}
+
+.select {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.form-check {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.sabores {
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+}
+.pasteles {
+    background-color: lightpink!important;
+}
+
+.fuente {
+    text-decoration-color: black;
+}
+
+a {
+    text-decoration: none; color: rgb(255, 32, 125);
+}
+
+
+

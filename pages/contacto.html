@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto</title>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css/estilos.css">
+  <link rel="stylesheet" href="../styles.css/contacto.css">
+  <link rel="icon" type="image/x-icon" href="../img/logo.jpg">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/a10880f112.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="contacto">
+  <nav>
+    <img src="../img/logo.jpg" alt="logo" width="100px">
+    <button class="boton"><a href="/">Home</a></button>
+    <button class="boton"><a href="./quienes somos.html">¿Quiénes Sómos?</a></button>
+    <button class="boton"><a href="./catalogo.html">Nuestro Catalogo</a></button>
+  </nav>
+
+  <div class="row row-cols-1 row-cols-md-3 text-center">
+    <div class="col-md-4">
+      <div class="card mb-4 rounded-3 shadow-sm border-danger">
+        <div class="card-header py-3 text-white pasteles">
+          <h4 class="my-0 fw-normal">TORTA DE UN PISO</h4>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title pricing-card-title"><b>$8000</b></h3>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card mb-4 rounded-3 shadow-sm border-danger">
+        <div class="card-header py-3 text-white pasteles">
+          <h4 class="my-0 fw-normal">TORTA DE DOS PISOS</h4>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title pricing-card-title"><b>$15000</b></h3>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card mb-4 rounded-3 shadow-sm border-danger">
+        <div class="card-header py-3 text-white pasteles">
+          <h4 class="my-0 fw-normal">TORTA DE TRES PISOS</h4>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title pricing-card-title"><b>$22000</b></h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <form id="formularioContacto" onsubmit="enviarDatos(event)">
+    <div class="select row">
+      <div class="col-md-4 mb-3">
+        <select class="form-select" aria-label="Default select example" id="pisosID">
+          <option selected>Cantidad pisos</option>
+          <option value="1">1 piso</option>
+          <option value="2">2 pisos</option>
+          <option value="3">3 pisos</option>
+        </select>
+      </div>
+
+      <div class="col-md-4 mb-3">
+        <select class="form-select pisos" aria-label="Default select example" id="saborID">
+          <option selected>sabor del bizcochuelo</option>
+          <option value="1">Zanahoria</option>
+          <option value="2">Vainilla</option>
+          <option value="3">Chocolate</option>
+          <option value="4">Uno y uno</option>
+        </select>
+      </div>
+
+      <div class="col-md-4 mb-3">
+        <select class="form-select" aria-label="Default select example">
+          <option selected>sabor del relleno</option>
+          <option value="1">Dulce de Leche</option>
+          <option value="2">Crema Chantilly</option>
+          <option value="3">Crema Oreo</option>
+          <option value="4">Uno y uno</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="row gx-0 mb-3">
+      <div class="col-md">
+        <div class="row">
+          <div class="col">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="check1">
+              <label class="form-check-label" for="flexCheckDefault">
+                Otro sabor de bizcochuelo (el precio final puede variar)
+              </label>
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="check2">
+              <label class="form-check-label" for="flexCheckChecked">
+                Otro sabor de relleno (el precio final puede variar)
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sabores row gx-0">
+      <div class="col-md mb-3">
+        <input type="text" class="form-control" placeholder="Escribi el sabor de bizcochuelo" aria-label="sabor1"
+          id="sabor1" style="display: none;">
+      </div>
+
+      <div class="col-md mb-3">
+        <input type="text" class="form-control" placeholder="Escribi el sabor del relleno" aria-label="sabor2"
+          id="sabor2" style="display: none;">
+      </div>
+    </div>
+
+
+    <div class="row gx-0">
+      <div class="col-md mb-3">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input type="text" class="form-control" placeholder="" aria-label="nombre" id="nombre" required>
+      </div>
+      <div class="col-md mb-3">
+        <label for="apellido" class="form-label">Apellido</label>
+        <input type="text" class="form-control" placeholder="" aria-label="Apellido" id="apellido" required>
+      </div>
+    </div>
+
+    <div class="row gx-0">
+      <div class="col-md mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="text" class="form-control" placeholder="" aria-label="Email" id="mail" required>
+      </div>
+      <div class="col-md mb-3">
+        <label for="telefono" class="form-label">Telefono</label>
+        <input type="number" class="form-control" placeholder="" aria-label="Teléfono" id="telefono" required>
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="mensaje" class="form-label">Dejanos tu mensaje</label>
+      <textarea class="form-control" id="mensaje" rows="3"></textarea>
+    </div>
+
+    <div class="alert alert-primary mt-2 mb-4" role="alert">
+      Total a pagar: <p id="precioTotal"></p> $ <span id="totalPago" class="align-middle"></span>
+    </div>
+
+    <div class="row gx-3">
+      <div class="col-md mb-3">
+        <button type="reset" class="w-100 btn pasteles btn-form" id="btnBorrar">Borrar</button>
+      </div>
+      <div class="col-md mb-3">
+        <button type="button" class="w-100 btn pasteles btn-form" id="btnResumen">Resumen</button>
+      </div>
+      <div class="col-md mb-3">
+        <button type="submit" class="w-100 btn pasteles btn-form">Enviar</button>
+      </div>
+    </div>
+  </form>
+
+  <footer>
+    <div class="footer-icons">
+      <a href="#"><i class="fab fa-whatsapp"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+    </div>
+    <p class="footer-text">
+    <h3>Hecho en Argentina año 2024</h3>
+    </p>
+  </footer>
+
+  <script src="../javascript/contacto.js"></script>
+  <script src="../javascript/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
