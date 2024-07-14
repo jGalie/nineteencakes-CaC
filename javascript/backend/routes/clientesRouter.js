@@ -3,15 +3,14 @@ const express = require("express");
 const bodyParser = require('body-parser');
 const router = express.Router();
 const conexion = require('../database/conexion.js');
-
 router.use(bodyParser.json()); 
-router.use(bodyParser.urlencoded({ extended: true }));
+
 
 
 router.get('/', (req, res) => {
     conexion.query('SELECT * FROM contacto', (error, results) => {  
         if (error) {
-            console.error('Error al obtener clientes: ' + error.message);
+            console.error('ERROR al obtener clientes: ' + error.message);
             res.status(500).send('¡ERROR al obtener clientes de la base de datos!');
             return;
         }
@@ -29,7 +28,7 @@ router.post('/', (req, res) => {
         pedido_id: pedido_id
     };
 
-    conexion.query('INSERT INTO contacto SET ?', newCliente, (error, results, fields) => {
+    conexion.query('INSERT INTO contacto SET ?', newCliente, (error, results) => {
         if (error) {
             console.error('ERROR al insertar cliente: ' + error.message);
             res.status(500).send('¡ERROR al guardar el cliente en la base de datos!'); 
@@ -62,7 +61,7 @@ router.put('/:id', (req, res) => {
 
 router.delete('/:id', (req, res) =>{
     const { id } = req.params;
-    const sql = `DELETE FROM contacto WHERE id_contacto = ?`;
+    const sql = `DELETE * FROM contacto WHERE id_contacto = ?`;
     const values = [id];
 
     conexion.query(sql, values, (err, result) => {
